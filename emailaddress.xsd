@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="emailAddress">
+    <xs:restriction base="xs:token">
+      <xs:maxLength value="254"/>
+      <xs:pattern value="[_\-a-zA-Z0-9\.\+]+@[a-zA-Z0-9](\.?[\-a-zA-Z0-9]*[a-zA-Z0-9])*"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

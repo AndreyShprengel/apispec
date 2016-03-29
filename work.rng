@@ -1,0 +1,18 @@
+<rng:grammar 
+    xmlns:rng="http://relaxng.org/ns/structure/1.0" 
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" 
+    ns="" 
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <rng:include href="Tiny-1.2.rng"/>
+  <rng:start combine="choice">
+    <rng:ref name="work"/>
+  </rng:start>
+  <rng:define name="work">
+    <rng:element name="work">
+        <rng:element name="workid">
+          <rng:data type="positiveInteger"/>
+        </rng:element>
+        <rng:ref name="svg"/>
+    </rng:element>
+  </rng:define>
+</rng:grammar>

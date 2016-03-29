@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="image_added">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="format" type="xs:string" minOccurs="1" maxOccurs="1" />
+        <xs:element name="hash" type="xs:string" minOccurs="1" maxOccurs="1" />
+        <xs:element name="location" type="xs:string" minOccurs="1" maxOccurs="1" />
+        <xs:element name="queue" type="xs:string" minOccurs="1" maxOccurs="1" />
+        <xs:element name="task" type="xs:string" minOccurs="1" maxOccurs="1" />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,17 @@
+<rng:grammar 
+    xmlns:rng="http://relaxng.org/ns/structure/1.0" 
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" 
+    ns="" 
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <rng:include href="work.rng"/>
+  <rng:start combine="choice">
+    <rng:ref name="work_list"/>
+  </rng:start>
+  <rng:define name="work_list">
+    <rng:element name="work_list">
+      <rng:oneOrMore>
+        <rng:ref name="work"/>
+      </rng:oneOrMore>
+    </rng:element>
+  </rng:define>
+</rng:grammar>

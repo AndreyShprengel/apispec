@@ -1,0 +1,52 @@
+<api>
+
+  <invalid_request schema="invalid_request.xsd"/>
+
+  <request url="/work/{tid}/{qid}/add"
+           method="POST"
+           schema="image.xsd"
+           name="build_work" 
+           handler="f0cal.turkapi.server.handler.addimage.AddImage">
+    <response code="201" schema="image_added.xsd"/>
+  </request>
+  
+  <request url="/work/{tid}/new"
+           method="GET"
+           name="get_work" 
+           handler="f0cal.turkapi.server.handler.getwork.GetWork">
+    <response code="201" schema="work.rng"/>
+    <response code="202" schema="no_work.xsd"/>
+
+  </request>
+
+  <request url="/work/{tid}/post"
+           method="POST"
+           schema="work.rng"
+           name="post_work" 
+           handler="f0cal.turkapi.server.handler.postwork.PostWork">
+    <response code="201" schema="work_posted.xsd"/>
+  </request>
+
+  <request url="/work/{tid}/review"
+           method="GET"
+           name="review_work" 
+           handler="f0cal.turkapi.server.handler.reviewwork.ReviewWork">
+    <response code="201" schema="work.rng"/>
+    <response code="202" schema="no_work.xsd"/>
+  </request>
+
+  <request url="/image{path:.*}"
+           method="GET"
+           name="serve_image"
+           handler="f0cal.turkapi.server.handler.serveimage.ServeImage">
+    <fileresponse/>
+  </request>
+
+  <request url="/work/{wid}/ancestors"
+           method="GET"
+           name="ancestor_works" 
+           handler="f0cal.turkapi.server.handler.reviewancestors.ReviewAncestors">
+    <response code="201" schema="work_list.rng"/>
+  </request>
+
+</api>
